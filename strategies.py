@@ -2,7 +2,7 @@
 Some example strategies for people who want to create a custom, homemade bot.
 And some handy classes to extend
 """
-
+import chess
 from chess.engine import PlayResult
 import random
 import math
@@ -120,7 +120,7 @@ class AlphaBetaPruning(ExampleEngine):
 
     def search(self, board, *args):
 
-        return PlayResult(self.alphabeta_search(board, 4, board.turn == chess.WHITE, -math.inf, math.inf)[0], None)
+        return PlayResult(self.alphabeta_search(board, 3, board.turn == chess.WHITE, -math.inf, math.inf)[0], None)
 
     def evaluate_position(self, board):
 
@@ -164,7 +164,6 @@ class AlphaBetaPruning(ExampleEngine):
             
             best_eval = -math.inf if white_to_move else math.inf
             best_move = ''
-            global total_branches_pruned
 
             if(white_to_move):               
                 for move in moves_list:
@@ -183,8 +182,6 @@ class AlphaBetaPruning(ExampleEngine):
                     #if(alpha > 100): print(depth, move, alpha, beta)
 
                     if(alpha >= beta):
-
-                        total_branches_pruned += 1
                         break
 
 
@@ -231,15 +228,12 @@ class AlphaBetaPruning(ExampleEngine):
 
         if(board.is_game_over() or moves_list == [] or depth == 0):
             eval = self.evaluate_position(board)
-            global total_quiescence_positions_evaluated
-            total_quiescence_positions_evaluated += 1
             return (None,eval)
 
         else:
             #random.shuffle(moves_list)
             best_eval = -math.inf if white_to_move else math.inf
             best_move = ''
-            global total_branches_pruned
 
             if(white_to_move):               
                 for move in moves_list:
@@ -258,8 +252,6 @@ class AlphaBetaPruning(ExampleEngine):
                     #if(alpha > 100): print(depth, move, alpha, beta)
 
                     if(alpha >= beta):
-
-                        total_branches_pruned += 1
                         break
 
 
@@ -279,7 +271,6 @@ class AlphaBetaPruning(ExampleEngine):
 
                     if(alpha >= beta):
 
-                        total_branches_pruned += 1
                         break
 
             #print(depth, "Best move is: " + str(best_move), "Eval: " + str(best_eval), end=" ")
@@ -288,7 +279,7 @@ class AlphaBetaPruning(ExampleEngine):
 
 
 
-    def move_ordering_sort(board, only_captures = False):
+    def move_ordering_sort(self, board, only_captures = False):
 
         moves_list = list(board.legal_moves)
 
