@@ -8,8 +8,8 @@ Hey guys! Here's my repo for my chess bot that I wrote in Python, integrated int
 - Here's a link to my youtube video walking through the journey of creating this bot - [link to video](https://www.youtube.com/watch?v=1Z0xZFJoJ9U). Enjoy!
 - [Link to the bot's profile on lichess](https://lichess.org/@/DragoonBot)
 - [My profile on lichess](https://lichess.org/@/yellowdragoon)
-That's all! Everything below is instructions for bot setup, and is straight from the original repo.
-Thanks to lichess for making this possible!
+- That's all! Everything below is instructions for bot setup, and is straight from the original repo.
+- Huge thanks to lichess for making this project possible!
 
 
 A bridge between [Lichess Bot API](https://lichess.org/api#tag/Bot) and bots.
