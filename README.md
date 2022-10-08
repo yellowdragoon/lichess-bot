@@ -3,7 +3,7 @@
 [![Python Test](https://github.com/ShailChoksi/lichess-bot/actions/workflows/python-test.yml/badge.svg)](https://github.com/ShailChoksi/lichess-bot/actions/workflows/python-test.yml)
 
 # Introduction
-Hey guys! Here's my repo for my chess bot that I wrote in Python, integrated into lichess. I've forked the offical wrapper API to connect to the lichess servers, so in here you'll find the additional search method that I've implemented as a "homebrew", namely in the chessbot.ipynb Jupyter Notebooks for testing and the AlphaBetaPruning class in the strategies.py for the actual implementation.
+Hey guys! Here's my repo for my chess bot that I wrote in Python, integrated into lichess. I've forked the offical wrapper API to connect to the lichess servers, so in here you'll find the additional search method that I've implemented as a "homebrew", namely in the `chessbot.ipynb` Jupyter Notebooks for testing and the `AlphaBetaPruning` class in the `strategies.py` for the actual implementation.
 
 - Here's a link to my youtube video walking through the journey of creating this bot - [link to video](https://www.youtube.com/watch?v=1Z0xZFJoJ9U). Enjoy!
 - [Link to the bot's profile on lichess](https://lichess.org/@/DragoonBot)
